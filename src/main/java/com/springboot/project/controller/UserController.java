@@ -4,11 +4,8 @@ import com.springboot.project.dto.MovieDto;
 import com.springboot.project.dto.MovieMapper;
 import com.springboot.project.dto.PlatformDto;
 import com.springboot.project.dto.PlatformMapper;
-import com.springboot.project.entity.Movie;
-import com.springboot.project.entity.Platform;
 import com.springboot.project.service.MovieService;
 import com.springboot.project.service.PlatformService;
-import com.springboot.project.service.PlatformServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.propertyeditors.StringTrimmerEditor;
 import org.springframework.stereotype.Controller;
@@ -39,8 +36,6 @@ public class UserController {
     @GetMapping("/movie-list")
     public String showMovies(Model model){
 
-//        List<Movie> movies=movieService.findall();
-
         List<MovieDto> movies= MovieMapper.INSTANCE.toDtos(movieService.findall());
 
         model.addAttribute("movies",movies);
@@ -51,7 +46,6 @@ public class UserController {
     @GetMapping("/platform-list")
     public String showPlatforms(Model model){
 
-//        List<Platform> platforms=platformService.findall();
 
         List<PlatformDto> platforms= PlatformMapper.INSTANCE.toDtos(platformService.findall());
 
@@ -63,7 +57,6 @@ public class UserController {
     @GetMapping("/showMovieInfo")
     public String showMovieInfo(@RequestParam("movieId") int id,Model model){
 
-//        Movie movie=movieService.findById(id);
 
         MovieDto movie= MovieMapper.INSTANCE.toDto(movieService.findById(id));
 

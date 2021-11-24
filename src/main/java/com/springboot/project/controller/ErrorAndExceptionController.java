@@ -1,7 +1,5 @@
 package com.springboot.project.controller;
 
-import com.springboot.project.exception.MovieNotFoundException;
-import com.springboot.project.exception.PlatformNotFoundException;
 import org.springframework.boot.web.servlet.error.ErrorController;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;

@@ -2,7 +2,6 @@ package com.springboot.project.service;
 
 import com.springboot.project.dao.PlatformRepository;
 import com.springboot.project.entity.Platform;
-import com.springboot.project.exception.MovieNameAlreadyExists;
 import com.springboot.project.exception.PlatformNameAlreadyExists;
 import com.springboot.project.exception.PlatformNotFoundException;
 import org.springframework.beans.factory.annotation.Autowired;

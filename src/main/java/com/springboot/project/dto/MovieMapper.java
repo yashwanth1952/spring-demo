@@ -2,7 +2,6 @@ package com.springboot.project.dto;
 
 import com.springboot.project.entity.Movie;
 import org.mapstruct.Mapper;
-import org.mapstruct.Mapping;
 import org.mapstruct.factory.Mappers;
 
 import java.util.List;
