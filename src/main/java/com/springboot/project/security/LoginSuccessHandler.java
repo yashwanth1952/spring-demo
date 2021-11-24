@@ -19,17 +19,19 @@ public class LoginSuccessHandler implements AuthenticationSuccessHandler {
     private RedirectStrategy redirectStrategy=new DefaultRedirectStrategy();
 
     @Override
-    public void onAuthenticationSuccess(HttpServletRequest arg0, HttpServletResponse arg1, Authentication authentication) throws IOException, ServletException {
+    public void onAuthenticationSuccess(HttpServletRequest arg0, HttpServletResponse arg1,
+                                        Authentication authentication) throws IOException, ServletException {
         boolean hasUserRole = false;
         boolean hasAdminRole = false;
         Collection<? extends GrantedAuthority> authorities = authentication.getAuthorities();
         for (GrantedAuthority grantedAuthority : authorities) {
             if (grantedAuthority.getAuthority().equals("ROLE_USER")) {
                 hasUserRole = true;
+                break;
             } else {
                 hasAdminRole = true;
+                break;
             }
-            break;
         }
 
         if (hasUserRole) {
