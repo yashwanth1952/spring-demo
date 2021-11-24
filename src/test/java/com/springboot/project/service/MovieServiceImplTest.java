@@ -32,49 +32,50 @@ import static org.mockito.Mockito.verify;
 @RunWith(SpringRunner.class)
 class MovieServiceImplTest {
 
-    @Autowired
-    private MovieService movieService;
+//    @Autowired
+//    private MovieService movieService;
+//
+//    @MockBean
+//    private MovieRepository movieRepository;
+//
+//    @Test
+//    void findall() {
+//        List<Movie> tempList=new ArrayList<>();
+//
+//        tempList.add(new Movie("Ram",6.7,"summary"));
+//        tempList.add(new Movie("Sam",6.7,"summary"));
+//
+//        Mockito.when(movieRepository.findAll()).thenReturn(tempList);
+//
+//        assertEquals(2,movieService.findall().size());
+//    }
+//
+//    @Test
+//    void findById() {
+//        int id=1;
+//        Movie movie=new Movie("Ram",6.7,"summary");
+//        Optional<Movie> optionalMovie=Optional.ofNullable(movie);
+//        Mockito.when(movieRepository.findById(id)).thenReturn(optionalMovie);
+//
+//        MatcherAssert.assertThat(movieService.findById(id),is(movie));
+////        MatcherAssert.assertThat;
+//    }
+//
+//    @Test
+//    void save() {
+//        Movie movie=new Movie("Ram",6.7,"summary");
+//
+//        Mockito.when(movieRepository.save(movie)).thenReturn(movie);
+//
+//        Assert.assertEquals(movie,movieService.save(movie));
+//    }
+//
+//    @Test
+//    void delete() {
+//        int id=1;
+//        Movie movie=new Movie(1,"Avengers",9.8,"Avengers Summary");
+//        movieService.delete(id);
+//        verify(movieRepository,times(1)).deleteById(id);
+//    }
 
-    @MockBean
-    private MovieRepository movieRepository;
-
-    @Test
-    void findall() {
-        List<Movie> tempList=new ArrayList<>();
-
-        tempList.add(new Movie("Ram",6.7,"summary"));
-        tempList.add(new Movie("Sam",6.7,"summary"));
-
-        Mockito.when(movieRepository.findAll()).thenReturn(tempList);
-
-        assertEquals(2,movieService.findall().size());
-    }
-
-    @Test
-    void findById() {
-        int id=1;
-        Movie movie=new Movie("Ram",6.7,"summary");
-        Optional<Movie> optionalMovie=Optional.ofNullable(movie);
-        Mockito.when(movieRepository.findById(id)).thenReturn(optionalMovie);
-
-        MatcherAssert.assertThat(movieService.findById(id),is(movie));
-//        MatcherAssert.assertThat;
-    }
-
-    @Test
-    void save() {
-        Movie movie=new Movie("Ram",6.7,"summary");
-
-        Mockito.when(movieRepository.save(movie)).thenReturn(movie);
-
-        Assert.assertEquals(movie,movieService.save(movie));
-    }
-
-    @Test
-    void delete() {
-        int id=1;
-        Movie movie=new Movie(1,"Avengers",9.8,"Avengers Summary");
-        movieService.delete(id);
-        verify(movieRepository,times(1)).deleteById(id);
-    }
 }
