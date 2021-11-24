@@ -26,6 +26,10 @@ public class AdminController {
     @Autowired
     private PlatformServiceImpl platformService;
 
+    String movieForm="movie-form";
+
+    String platformForm="platform-form";
+
     @InitBinder
     public void initBinder(WebDataBinder webDataBinder){
         StringTrimmerEditor stringTrimmerEditor=new StringTrimmerEditor(true);
@@ -63,7 +67,7 @@ public class AdminController {
 
         model.addAttribute("platforms",platforms);
 
-        return "movie-form";
+        return movieForm;
     }
 
     @GetMapping("/platform-form")
@@ -73,7 +77,7 @@ public class AdminController {
 
         model.addAttribute("platform",platform);
 
-        return "platform-form";
+        return platformForm;
     }
 
     @GetMapping("/movieUpdateForm")
@@ -87,7 +91,7 @@ public class AdminController {
 
         model.addAttribute("platforms",platforms);
 
-        return "movie-form";
+        return movieForm;
     }
 
     @GetMapping("/platformUpdateForm")
@@ -97,7 +101,7 @@ public class AdminController {
 
         model.addAttribute("platform",platform);
 
-        return "platform-form";
+        return platformForm;
     }
 
     @GetMapping("/movieDelete")
@@ -126,7 +130,7 @@ public class AdminController {
 
             model.addAttribute("platforms",platforms);
 
-            return "movie-form";
+            return movieForm;
         }
         movieService.save(movie);
 
@@ -138,7 +142,7 @@ public class AdminController {
     public String platformSave(@Valid @ModelAttribute("platform") Platform platform, BindingResult bindingResult){
 
         if(bindingResult.hasErrors()){
-            return "platform-form";
+            return platformForm;
         }
 
         platformService.save(platform);
