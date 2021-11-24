@@ -21,9 +21,9 @@ import static org.mockito.Mockito.when;
 @SpringBootTest
 public class ThymeleafdemoApplicationTests {
 
-	@Test
-	public void contextLoads() {
-	}
+//	@Test
+//	public void contextLoads() {
+//	}
 
 
 }
